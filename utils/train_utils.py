@@ -17,9 +17,9 @@ def get_model_obj(model_type):
     if model_type == CLS:
         return AutoModelForSequenceClassification
     elif model_type == QA:
-        return AutoModelForTokenClassification
-    elif model_type == TCLS:
         return AutoModelForQuestionAnswering
+    elif model_type == TCLS:
+        return AutoModelForTokenClassification
     else:
         raise ValueError(f"Model type {model_type} is not supported. Available types are {ALL_MODEL_TYPES}")
 

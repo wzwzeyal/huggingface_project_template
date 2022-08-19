@@ -26,6 +26,7 @@ from transformers import (
     DataCollatorWithPadding,
     HfArgumentParser,
     default_data_collator,
+    AutoTokenizer,
     set_seed,
 )
 from transformers.utils.versions import require_version
@@ -266,3 +267,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# --output_dir . --metrics accuracy
