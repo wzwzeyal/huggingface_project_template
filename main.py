@@ -262,6 +262,10 @@ def main():
     # Load datasets
     # TODO: 1. replace load_dataset with my own dataset
     # https://huggingface.co/docs/datasets/loading
+    # https://wandb.ai/biased-ai/Named-Entity%20Recognition%20on%20HuggingFace/reports/Named-Entity-Recognition-on-HuggingFace--Vmlldzo3NTk4NjY
+    # https://www.freecodecamp.org/news/getting-started-with-ner-models-using-huggingface/
+    # https://www.analyticsvidhya.com/blog/2022/06/how-to-train-an-ner-model-with-huggingface/
+
     # TODO: Q: Is ner should be performed on sentences that are not tokenized ?
     raw_datasets = load_dataset(data_args.dataset)
     raw_datasets = preprocess_datasets(data_args, model_args, training_args, raw_datasets)
