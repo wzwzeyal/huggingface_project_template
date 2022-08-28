@@ -40,6 +40,11 @@ def load_dataset_to_df(path, pattern="*.biose", columns=None, take_first_ner=Tru
 
         # remove all the NA rows
         df.dropna(inplace=True)
+        df['words'] = df[['sentence_id', 'text', 'ner']].groupby(['sentence_id'])['text'].apply(list)
+        df['ner_labels'] = df[['sentence_id', 'text', 'ner']].groupby(['sentence_id'])['ner'].apply(list)
+        df.dropna(inplace=True)
+        df = df[["words", "ner_labels"]]
+
         res = pd.concat([res, df])
 
     if take_first_ner:
